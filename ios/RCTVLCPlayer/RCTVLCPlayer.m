@@ -1,5 +1,5 @@
 #import <React/RCTConvert.h>
-#import <React/RCTVLCPlayer.h>
+#import "RCTVLCPlayer.h"
 #import <React/RCTBridgeModule.h>
 #import <React/RCTEventDispatcher.h>
 #import <React/UIView+React.h>
