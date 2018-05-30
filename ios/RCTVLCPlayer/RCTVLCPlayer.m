@@ -1,9 +1,9 @@
-#import <React/RCTConvert.h>
+#import "RCTConvert.h"
 #import "RCTVLCPlayer.h"
-#import <React/RCTBridgeModule.h>
-#import <React/RCTEventDispatcher.h>
-#import <React/UIView+React.h>
-#import <MobileVLCKit/MobileVLCKit.h>
+#import "RCTBridgeModule.h"
+#import "RCTEventDispatcher.h"
+#import "UIView+React.h"
+#import "MobileVLCKit.h"
 static NSString *const statusKeyPath = @"status";
 static NSString *const playbackLikelyToKeepUpKeyPath = @"playbackLikelyToKeepUp";
 static NSString *const playbackBufferEmptyKeyPath = @"playbackBufferEmpty";
@@ -12,33 +12,33 @@ static NSString *const playbackRate = @"rate";
 
 @implementation RCTVLCPlayer
 {
-    
+
     /* Required to publish events */
     RCTEventDispatcher *_eventDispatcher;
     VLCMediaPlayer *_player;
-    
+
     BOOL _paused;
     BOOL _started;
-    
+
 }
 
 - (instancetype)initWithEventDispatcher:(RCTEventDispatcher *)eventDispatcher
 {
     if ((self = [super init])) {
         _eventDispatcher = eventDispatcher;
-        
+
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(applicationWillResignActive:)
                                                      name:UIApplicationWillResignActiveNotification
                                                    object:nil];
-        
+
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(applicationWillEnterForeground:)
                                                      name:UIApplicationWillEnterForegroundNotification
                                                    object:nil];
-        
+
     }
-    
+
     return self;
 }
 
@@ -91,12 +91,12 @@ static NSString *const playbackRate = @"rate";
     NSString* uri    = [source objectForKey:@"uri"];
     BOOL    autoplay = [RCTConvert BOOL:[source objectForKey:@"autoplay"]];
     NSURL* _uri    = [NSURL URLWithString:uri];
-    
+
     //init player && play
     _player = [[VLCMediaPlayer alloc] initWithOptions:options];
     [_player setDrawable:self];
     _player.delegate = self;
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mediaPlayerStateChanged:) name:VLCMediaPlayerStateChanged object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(mediaPlayerTimeChanged:) name:VLCMediaPlayerTimeChanged object:nil];
     _player.media = [VLCMedia mediaWithURL:_uri];
@@ -170,11 +170,11 @@ static NSString *const playbackRate = @"rate";
 
 -(void)updateVideoProgress
 {
-    
+
     int currentTime   = [[_player time] intValue];
     int remainingTime = [[_player remainingTime] intValue];
     int duration      = [_player.media.length intValue];
-    
+
     if( currentTime >= 0 && currentTime < duration && self.onVideoProgress) {
         self.onVideoProgress(@{
                                @"target": self.reactTag,
@@ -235,4 +235,3 @@ static NSString *const playbackRate = @"rate";
 }
 
 @end
-
