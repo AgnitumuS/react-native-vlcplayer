@@ -233,6 +233,8 @@
 					"$(SRCROOT)/node_modules/react-native/React/**",
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/MobileVLCKit/MobileVLCKit",
+					"$(SRCROOT)/../../../node_modules/react-native/ReactCommon/yoga",
+					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/React/",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -256,6 +258,8 @@
 					"$(SRCROOT)/node_modules/react-native/React/**",
 					"$(inherited)",
 					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/MobileVLCKit/MobileVLCKit",
+					"$(SRCROOT)/../../../node_modules/react-native/ReactCommon/yoga",
+					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/React/",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
