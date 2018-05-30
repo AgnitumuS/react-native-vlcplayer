@@ -224,17 +224,18 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../../../ios/Frameworks",
-					"~/Documents/MobileVLCKit-binary",
-					"$(PROJECT_DIR)/../../../ios/Pods/MobileVLCKit/MobileVLCKit-binary",
+					"$(PROJECT_DIR)/../../../ios/Pods/MobileVLCKit-unstable/MobileVLCKit-binary",
 				);
 				HEADER_SEARCH_PATHS = (
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../react-native/React/**",
 					"$(SRCROOT)/node_modules/react-native/React/**",
 					"$(inherited)",
-					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/MobileVLCKit/MobileVLCKit",
+					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/MobileVLCKit-unstable/MobileVLCKit",
 					"$(SRCROOT)/../../../node_modules/react-native/ReactCommon/yoga",
-					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/React/",
+					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/React",
+					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/Yoga",
+					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
@@ -249,17 +250,18 @@
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(PROJECT_DIR)/../../../ios/Frameworks",
-					"~/Documents/MobileVLCKit-binary",
-					"$(PROJECT_DIR)/../../../ios/Pods/MobileVLCKit/MobileVLCKit-binary",
+					"$(PROJECT_DIR)/../../../ios/Pods/MobileVLCKit-unstable/MobileVLCKit-binary",
 				);
 				HEADER_SEARCH_PATHS = (
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../react-native/React/**",
 					"$(SRCROOT)/node_modules/react-native/React/**",
 					"$(inherited)",
-					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/MobileVLCKit/MobileVLCKit",
+					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/MobileVLCKit-unstable/MobileVLCKit",
 					"$(SRCROOT)/../../../node_modules/react-native/ReactCommon/yoga",
-					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/React/",
+					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/React",
+					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/Yoga",
+					"$(PROJECT_DIR)/../../../ios/Pods/Headers/Public/",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
